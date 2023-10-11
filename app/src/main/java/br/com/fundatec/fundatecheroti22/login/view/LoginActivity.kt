@@ -15,47 +15,49 @@ import br.com.fundatec.fundatecheroti22.login.presentation.model.LoginViewState
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private val viewModel:LoginViewModel by viewModels()
+    private val viewModel: LoginViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_FundatecHeroTI22)
         binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        configloginButton()
-        configNewHereButton()
+        setContentView(binding.root)
+        configLoginButton()
 
         viewModel.state.observe(this) {
             when (it) {
                 is LoginViewState.Success -> TODO()
                 is LoginViewState.Error -> TODO()
                 LoginViewState.Loading -> TODO()
-                LoginViewState.ShowEmailError ->
-                    showEmaigitlError()
-                LoginViewState.ShowPasswordError ->
-                    showPasswordError()
-    }
+                LoginViewState.ShowEmailError -> showEmailError()
+                LoginViewState.ShowPasswordError -> showPasswordError()
+            }
+        }
 
-    private fun configButtonLogin() {
-        binding.loginButton.setOnClickListener {
-            viewModel.validateInputs(
-                binding.email.text.toString(),
-                binding.password.text.toString()
-            )
-//            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
+
+            private fun configLoginButton() {
+                binding.loginButton.setOnClickListener {
+                    viewModel.validateInputs(
+                        binding.emailEdit.text.toString(),
+                        binding.passwordEdit.text.toString()
+                    )
+                    startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
+                }
+            }
+
+        private fun configNewHereButton() {
+            binding.newHereTextView.setOnClickListener {
+                startActivity(Intent(this@LoginActivity, ProfileActivity::class.java))
+            }
+        }
+
+        private fun showEmailError() {
+            binding.tilEmail.error = getString(R.string.email_error) // Alterei de "emailEdit" para "tilEmail"
+        }
+
+        private fun showPasswordError() {
+            binding.tilPassword.error = getString(R.string.password_error) // Alterei de "passwordEdit" para "tilPassword"
+        }
         }
     }
 
-    private fun configNewHereButton(){
-        binding.newHereTextView.setOnClickListener {
-            startActivity(Intent(this@LoginActivity, ProfileActivity::class.java))
-
-        }
-    }
-    private fun showEmailError(errorMessage: String){
-        binding.email.error = errorMessage
-    }
-    private fun showPasswordError(errorMessage: String){
-        binding.password.error = errorMessage
-    }
-}
