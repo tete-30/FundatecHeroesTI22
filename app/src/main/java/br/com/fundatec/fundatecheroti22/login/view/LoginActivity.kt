@@ -33,31 +33,33 @@ class LoginActivity : AppCompatActivity() {
                 LoginViewState.ShowPasswordError -> showPasswordError()
             }
         }
+    }
 
 
-            private fun configLoginButton() {
-                binding.loginButton.setOnClickListener {
-                    viewModel.validateInputs(
-                        binding.emailEdit.text.toString(),
-                        binding.passwordEdit.text.toString()
-                    )
-                    startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
-                }
-            }
-
-        private fun configNewHereButton() {
-            binding.newHereTextView.setOnClickListener {
-                startActivity(Intent(this@LoginActivity, ProfileActivity::class.java))
-            }
-        }
-
-        private fun showEmailError() {
-            binding.tilEmail.error = getString(R.string.email_error) // Alterei de "emailEdit" para "tilEmail"
-        }
-
-        private fun showPasswordError() {
-            binding.tilPassword.error = getString(R.string.password_error) // Alterei de "passwordEdit" para "tilPassword"
-        }
+    private fun configLoginButton() {
+        binding.loginButton.setOnClickListener {
+            viewModel.validateInputs(
+                binding.email.text.toString(),
+                binding.password.text.toString()
+            )
+            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
         }
     }
+
+    private fun configNewHereButton() {
+        binding.newHereTextView.setOnClickListener {
+            startActivity(Intent(this@LoginActivity, ProfileActivity::class.java))
+        }
+    }
+
+    private fun showEmailError() {
+        binding.tilEmail.error =
+            getString(R.string.email_error) // Alterei de "emailEdit" para "tilEmail"
+    }
+
+    private fun showPasswordError() {
+        binding.tilPassword.error =
+            getString(R.string.password_error) // Alterei de "passwordEdit" para "tilPassword"
+    }
+}
 
