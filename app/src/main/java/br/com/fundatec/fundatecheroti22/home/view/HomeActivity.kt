@@ -36,5 +36,8 @@ class HomeActivity : AppCompatActivity() {
             )
 
         )
+        binding.btTest.setOnClickListener {
+            adapter.remove(2)
+        }
     }
 }

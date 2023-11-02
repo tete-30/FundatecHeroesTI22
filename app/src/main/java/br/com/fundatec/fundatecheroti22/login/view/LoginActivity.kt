@@ -20,8 +20,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_FundatecHeroTI22)
         binding = ActivityLoginBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
+
         configLoginButton()
 
         viewModel.state.observe(this) {
@@ -53,13 +53,13 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun showEmailError() {
-        binding.tilEmail.error =
-            getString(R.string.email_error) // Alterei de "emailEdit" para "tilEmail"
+        binding.tilEmail.error = getString(R.string.email_error)
+        getString(R.string.email_error) // Alterei de "emailEdit" para "tilEmail"
     }
 
     private fun showPasswordError() {
-        binding.tilPassword.error =
-            getString(R.string.password_error) // Alterei de "passwordEdit" para "tilPassword"
+        binding.tilPassword.error = getString(R.string.password_error)
+        getString(R.string.password_error) // Alterei de "passwordEdit" para "tilPassword"
     }
 }
 

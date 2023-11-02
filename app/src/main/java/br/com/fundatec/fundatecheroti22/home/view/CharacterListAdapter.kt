@@ -25,9 +25,13 @@ class CharacterListAdapter : RecyclerView.Adapter<CharacterViewHolder>() {
         holder.bind(list[position])
     }
 
-    fun addList(items: List<CharacterModel>){
+    fun addList(items: List<CharacterModel>) {
         list.addAll(items)
-        notifyDataSetChanged()
+    }
+
+    fun remove(position: Int) {
+        list.removeAt(position)
+        notifyItemChanged(position)
     }
 
 }

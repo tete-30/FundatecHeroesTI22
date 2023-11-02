@@ -54,4 +54,4 @@ class ProfileActivity : AppCompatActivity() {
         ).show()
     }
 
-    }
+}

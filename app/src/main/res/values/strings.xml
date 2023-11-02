@@ -5,4 +5,12 @@
     <string name="password">Senha</string>
     <string name="email_error">Digite um e-mail válido</string>
     <string name="password_error">Digite uma senha válida</string>
+    <string name="nomeHerois">Qual é o nome do seu Herói ou Vilão?</string>
+    <string name="nomePersonagem">Qual é o nome do seu Herói ou Vilão?</string>
+    <string name="descricao">Descreva o seu personagem</string>
+    <string name="imagemPersonagem">Insira o link (URL)da imagem do seu personagem</string>
+    <string name="idade">Quantos anos o seu personagem tem?</string>
+    <string name="anos">Idade</string>
+    <string name="dataNasc">Data de Nascimento</string>
+    <string name="app_criar_personagem">Criar Personagem</string>
 </resources>
