@@ -41,23 +41,23 @@ class ProfileActivity : AppCompatActivity() {
     private fun configBtCreateUser() {
         binding.buttonCreate.setOnClickListener {
             viewModel.validateInputs(
-                name = binding.name.text.toString(),
-                email = binding.email.text.toString(),
-                password = binding.password.text.toString(),
+                name = binding.editTextName.text.toString(),
+                email = binding.editTextEmail.text.toString(),
+                password = binding.editTextPassword.text.toString(),
             )
         }
     }
 
     private fun showNameError() {
-        binding.email.error = getString(R.string.email_error)
+        binding.editTextName.error = getString(R.string.email_error)
     }
 
     private fun showEmailError() {
-        binding.email.error = getString(R.string.email_error)
+        binding.editTextEmail.error = getString(R.string.email_error)
     }
 
     private fun showPasswordError() {
-        binding.password.error = getString(R.string.password_error)
+        binding.editTextPassword.error = getString(R.string.password_error)
     }
 
     private fun showSnackMessage(message: String) {

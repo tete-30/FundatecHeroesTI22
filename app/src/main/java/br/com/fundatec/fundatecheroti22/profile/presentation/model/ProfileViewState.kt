@@ -1,6 +1,5 @@
 package br.com.fundatec.fundatecheroti22.profile.presentation.model
-
-class ProfileViewState {
+sealed class ProfileViewState  {
 
     object Success : ProfileViewState()
     object Loading : ProfileViewState()
