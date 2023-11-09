@@ -2,16 +2,14 @@ package br.com.fundatec.fundatecheroti22.login.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.widget.Button
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import br.com.fundatec.fundatecheroti22.R
 import br.com.fundatec.fundatecheroti22.databinding.ActivityLoginBinding
-import br.com.fundatec.fundatecheroti22.home.profile.view.ProfileActivity
 import br.com.fundatec.fundatecheroti22.home.view.HomeActivity
 import br.com.fundatec.fundatecheroti22.login.presentation.LoginViewModel
 import br.com.fundatec.fundatecheroti22.login.presentation.model.LoginViewState
+import br.com.fundatec.fundatecheroti22.profile.view.ProfileActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -23,6 +21,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         configLoginButton()
+        configNewHereButton()
 
         viewModel.state.observe(this) {
             when (it) {
@@ -31,6 +30,8 @@ class LoginActivity : AppCompatActivity() {
                 LoginViewState.Loading -> TODO()
                 LoginViewState.ShowEmailError -> showEmailError()
                 LoginViewState.ShowPasswordError -> showPasswordError()
+                LoginViewState.ShowHomeScreen -> TODO()
+                LoginViewState.ShowEmailPasswordError -> TODO()
             }
         }
     }
@@ -38,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun configLoginButton() {
         binding.loginButton.setOnClickListener {
-            viewModel.validateInputs(
+            viewModel.validacaoPreenchimento(
                 binding.email.text.toString(),
                 binding.password.text.toString()
             )

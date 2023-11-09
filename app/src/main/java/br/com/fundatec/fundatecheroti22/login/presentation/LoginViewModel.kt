@@ -6,10 +6,18 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import br.com.fundatec.fundatecheroti22.R
+import br.com.fundatec.fundatecheroti22.login.domain.LoginUseCase
 import br.com.fundatec.fundatecheroti22.login.presentation.model.LoginViewState
+import kotlinx.coroutines.launch
 
 class LoginViewModel : ViewModel() {
+
+
+    private val useCase by lazy {
+        LoginUseCase()
+    }
 
     private val viewState: MutableLiveData<LoginViewState> = MutableLiveData()
     val state: LiveData<LoginViewState> = viewState
@@ -17,15 +25,27 @@ class LoginViewModel : ViewModel() {
     private val passwordState: MutableLiveData<String> = MutableLiveData()
     val password: LiveData<String> = passwordState
 
-    fun validateInputs(email: String?, password: String?) {
-        if (email.isNullOrBlank()) {
+
+    fun validacaoPreenchimento(
+        email: String,
+        password: String
+    ) {
+        if (email.isEmpty() || password.isEmpty()) {
+            viewState.value = LoginViewState.ShowEmailPasswordError
+        } else if (email.contains("@") && email.contains(".com")) {
+            viewModelScope.launch {
+                val isSuccess = useCase.verificarUser(
+                    password = password,
+                    email = email,
+                )
+                if (isSuccess) {
+                    viewState.value = LoginViewState.ShowHomeScreen
+                }
+            }
+
+            viewState.value = LoginViewState.ShowHomeScreen
+        } else {
             viewState.value = LoginViewState.ShowEmailError
         }
-
-        if (password.isNullOrBlank()) {
-            viewState.value = LoginViewState.ShowPasswordError
-        }
-
     }
-
 }

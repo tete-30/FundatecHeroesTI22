@@ -35,4 +35,20 @@ class LoginRepository {
         }
     }
 
+    suspend fun verificarUser(password: String, email: String): Boolean{
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = repository.verificarUser(
+                    password = password,
+                    email = email,
+                )
+                response.isSuccessful
+            } catch (ex: java.lang.Exception) {
+                Log.e("verificarUser", ex.message.toString())
+                false
+            }
+        }
+    }
+
+
 }

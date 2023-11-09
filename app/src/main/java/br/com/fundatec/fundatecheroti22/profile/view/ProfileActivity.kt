@@ -21,15 +21,20 @@ class ProfileActivity : AppCompatActivity() {
 
         viewModel.state.observe(this) {
             when (it) {
-                Success ->
+                Success -> {
                     showSnackMessage("Sucesso ao criar o usuário")
+                    finish()
+
+                }
                 Error ->
                     showSnackMessage("Ocorreu um erro ao criar o usuário")
                 Loading -> TODO()
                 ShowNameError ->
                     showNameError()
+
                 ShowEmailError ->
                     showEmailError()
+
                 ShowPasswordError ->
                     showPasswordError()
             }

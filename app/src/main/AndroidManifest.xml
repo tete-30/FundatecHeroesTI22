@@ -15,10 +15,7 @@
             android:name=".profile.view.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".createCharacter.view.CreateCharacterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".home.profile.view.ProfileActivity"
+            android:name="com.example.fundatecheroes.createCharacter.view.CreateCharacterActivity"
             android:exported="false" />
         <activity
             android:name=".login.view.LoginActivity"
