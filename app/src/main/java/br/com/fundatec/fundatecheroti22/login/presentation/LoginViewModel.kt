@@ -32,6 +32,7 @@ class LoginViewModel : ViewModel() {
     ) {
         if (email.isEmpty() || password.isEmpty()) {
             viewState.value = LoginViewState.ShowEmailPasswordError
+            return
         } else if (email.contains("@") && email.contains(".com")) {
             viewModelScope.launch {
                 val isSuccess = useCase.verificarUser(

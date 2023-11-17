@@ -21,5 +21,12 @@ interface LoginService {
         @Query("email") email: String
     ): Response<LoginResponse>
 
+    @GET("/api/login")
+    suspend fun login(
+        @Query("email") email: String,
+        @Query("password") password: String,
+    ): Response<LoginResponse>
+
+
 
 }

@@ -23,6 +23,9 @@ class LoginActivity : AppCompatActivity() {
         configLoginButton()
         configNewHereButton()
 
+        this.applicationContext
+
+
         viewModel.state.observe(this) {
             when (it) {
                 is LoginViewState.Success -> TODO()
