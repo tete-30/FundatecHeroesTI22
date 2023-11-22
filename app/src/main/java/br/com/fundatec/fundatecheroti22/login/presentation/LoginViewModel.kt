@@ -30,23 +30,20 @@ class LoginViewModel : ViewModel() {
         email: String,
         password: String
     ) {
-        if (email.isEmpty() || password.isEmpty()) {
-            viewState.value = LoginViewState.ShowEmailPasswordError
-            return
-        } else if (email.contains("@") && email.contains(".com")) {
-            viewModelScope.launch {
-                val isSuccess = useCase.verificarUser(
-                    password = password,
-                    email = email,
-                )
-                if (isSuccess) {
-                    viewState.value = LoginViewState.ShowHomeScreen
-                }
-            }
-
-            viewState.value = LoginViewState.ShowHomeScreen
-        } else {
+        if (email.isNullOrBlank()) {
             viewState.value = LoginViewState.ShowEmailError
+            return
+        }
+
+        if (password.isNullOrBlank()) {
+            viewState.value = LoginViewState.ShowPasswordError
+            return
+        }
+        viewModelScope.launch {
+            val isValidUser = useCase.login(email = email, password = password)
+            if (isValidUser) {
+                viewState.value = LoginViewState.ShowHomeScreen
+            }
         }
     }
 }

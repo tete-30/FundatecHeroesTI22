@@ -33,7 +33,8 @@ class LoginActivity : AppCompatActivity() {
                 LoginViewState.Loading -> TODO()
                 LoginViewState.ShowEmailError -> showEmailError()
                 LoginViewState.ShowPasswordError -> showPasswordError()
-                LoginViewState.ShowHomeScreen -> TODO()
+                LoginViewState.ShowHomeScreen -> startActivity(Intent(this@LoginActivity,
+                    HomeActivity::class.java))
                 LoginViewState.ShowEmailPasswordError -> TODO()
             }
         }
