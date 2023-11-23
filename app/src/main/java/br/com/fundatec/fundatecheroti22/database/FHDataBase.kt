@@ -1,12 +1,12 @@
 package br.com.fundatec.fundatecheroti22.database
 
-import androidx.databinding.adapters.Converters
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.Room.databaseBuilder
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import br.com.fundatec.fundatecheroti22.App
+import br.com.fundatec.fundatecheroti22.database.converter.Converters
 import br.com.fundatec.fundatecheroti22.login.data.local.UserDao
 import br.com.fundatec.fundatecheroti22.login.data.local.UserEntity
 

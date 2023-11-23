@@ -12,6 +12,7 @@ import br.com.fundatec.fundatecheroti22.login.domain.LoginUseCase
 import br.com.fundatec.fundatecheroti22.login.presentation.model.LoginViewState
 import kotlinx.coroutines.launch
 
+
 class LoginViewModel : ViewModel() {
 
 
@@ -21,6 +22,8 @@ class LoginViewModel : ViewModel() {
 
     private val viewState: MutableLiveData<LoginViewState> = MutableLiveData()
     val state: LiveData<LoginViewState> = viewState
+
+
 
     private val passwordState: MutableLiveData<String> = MutableLiveData()
     val password: LiveData<String> = passwordState

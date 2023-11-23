@@ -9,9 +9,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="210dp"
-        android:layout_height="377dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logoepf"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="177dp" />
+
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
