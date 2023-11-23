@@ -20,8 +20,22 @@
         android:id="@+id/bt_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Teste"
+        android:text="Criar"
         app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/floating_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/corBottom"
+        android:contentDescription="@string/app_criar_personagem"
+        android:src="@drawable/x"
+        app:layout_constraintBottom_toTopOf="@+id/bt_test"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -102,5 +102,26 @@ class LoginRepository {
         }
     }
 
+    suspend fun saveCharacter(character: Character) {
+        return withContext(Dispatchers.IO) {
+            try {
+                // Salvar personagem na API
+                val saveResponse = repository.saveCharacter(character)
+                if (saveResponse.isSuccessful) {
+                    // Limpar o cache
+                    clearDateCache()
+
+                    // Navegar para a tela de home
+                    navigateToHome()
+                } else {
+                    // Tratar erro ao salvar personagem
+                    Log.e("saveCharacter", "Erro ao salvar personagem na API")
+                }
+            } catch (ex: Exception) {
+                Log.e("saveCharacter", ex.message.toString())
+            }
+        }
+    }
+
 
 }

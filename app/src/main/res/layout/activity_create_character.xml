@@ -150,10 +150,10 @@
         android:layout_margin="16dp"
         android:backgroundTint="@color/corBottom"
         android:contentDescription="@string/app_criar_personagem"
-        android:src="@drawable/flecha"
+        android:src="@drawable/check"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
