@@ -17,4 +17,16 @@
     <string name="anos">Idade</string>
     <string name="dataNasc">Data de Nascimento</string>
     <string name="app_criar_personagem">Criar Personagem</string>
+    <string name="criar">Criar</string>
+    <string name="remover">Remover</string>
+    <string-array name="universeType">
+        <item>Selecione</item>
+        <item>Marvel</item>
+        <item>DC</item>
+    </string-array>
+    <string-array name="tipoPersonagem">
+        <item>Selecione</item>
+        <item>Herói</item>
+        <item>Vilão</item>
+    </string-array>
 </resources>

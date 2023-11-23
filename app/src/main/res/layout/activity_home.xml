@@ -17,11 +17,30 @@
         tools:listitem="@layout/character_list_item" />
 
     <Button
+        android:id="@+id/floating_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/corBottom"
+        android:text="@string/criar"
+        android:src="@drawable/x"
+        app:layout_constraintBottom_toTopOf="@+id/bt_test"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+
+    <Button
         android:id="@+id/bt_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Teste"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/corBottom"
+        android:text="@string/remover"
         app:layout_constraintBottom_toBottomOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

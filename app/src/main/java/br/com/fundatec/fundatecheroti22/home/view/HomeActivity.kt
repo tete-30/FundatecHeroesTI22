@@ -1,5 +1,6 @@
 package br.com.fundatec.fundatecheroti22.home.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,8 @@ import br.com.fundatec.fundatecheroti22.databinding.ActivityHomeBinding
 import br.com.fundatec.fundatecheroti22.gone
 import br.com.fundatec.fundatecheroti22.home.domain.CharacterModel
 import br.com.fundatec.fundatecheroti22.home.presentation.model.HomeViewState
+import br.com.fundatec.fundatecheroti22.profile.view.ProfileActivity
+import com.example.fundatecheroes.createCharacter.view.CreateCharacterActivity
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -21,6 +24,7 @@ class HomeActivity : AppCompatActivity() {
         setTheme(R.style.Theme_FundatecHeroTI22)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        configNewCharacter()
 
         binding.rvList.adapter = adapter
         adapter.addList(
@@ -38,6 +42,12 @@ class HomeActivity : AppCompatActivity() {
         )
         binding.btTest.setOnClickListener {
             adapter.remove(2)
+        }
+    }
+
+    private fun configNewCharacter() {
+        binding.floatingButton.setOnClickListener {
+            startActivity(Intent(this@HomeActivity, CreateCharacterActivity::class.java))
         }
     }
 }

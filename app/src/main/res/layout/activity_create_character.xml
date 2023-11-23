@@ -124,6 +124,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:entries="@array/universeType"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toStartOf="@+id/tipo_empresa"
@@ -150,10 +151,10 @@
         android:layout_margin="16dp"
         android:backgroundTint="@color/corBottom"
         android:contentDescription="@string/app_criar_personagem"
-        android:src="@drawable/flecha"
+        android:src="@drawable/check"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

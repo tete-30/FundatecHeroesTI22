@@ -9,9 +9,8 @@ import br.com.fundatec.fundatecheroti22.R
 import br.com.fundatec.fundatecheroti22.databinding.ActivityCreateCharacterBinding
 
 class CreateCharacterActivity : AppCompatActivity() {
-    private  lateinit var binding: ActivityCreateCharacterBinding
-    val characterTypes = arrayOf("Heroi", "Vilão")
-    val companies = arrayOf("Marvel", "DC")
+    private lateinit var binding: ActivityCreateCharacterBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCreateCharacterBinding.inflate(layoutInflater)
@@ -21,7 +20,7 @@ class CreateCharacterActivity : AppCompatActivity() {
         val characterTypeAdapter = ArrayAdapter<String>(
             this,
             android.R.layout.simple_spinner_dropdown_item,
-            characterTypes
+            resources.getStringArray(R.array.tipoPersonagem)
         )
         characterTypeSpinner.adapter = characterTypeAdapter
 
@@ -29,7 +28,9 @@ class CreateCharacterActivity : AppCompatActivity() {
         val companyAdapter = ArrayAdapter<String>(
             this,
             android.R.layout.simple_spinner_dropdown_item,
-            companies
+            resources.getStringArray(R.array.universeType)
+
+
         )
         companySpinner.adapter = companyAdapter
     }

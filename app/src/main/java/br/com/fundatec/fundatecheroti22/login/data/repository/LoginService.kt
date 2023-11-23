@@ -27,6 +27,7 @@ interface LoginService {
         @Query("password") password: String,
     ): Response<LoginResponse>
 
-
-
+//    @POST("/api/saveCharacter")
+//    suspend fun saveCharacter(@Body character: Character): Response<CharacterRequ>
 }
+

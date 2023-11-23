@@ -5,6 +5,7 @@ import android.os.Bundle
 import br.com.fundatec.fundatecheroti22.R
 import androidx.activity.viewModels
 import br.com.fundatec.fundatecheroti22.databinding.ActivityProfileBinding
+import br.com.fundatec.fundatecheroti22.home.domain.CharacterModel
 import br.com.fundatec.fundatecheroti22.profile.presentation.model.ProfileViewModel
 import br.com.fundatec.fundatecheroti22.profile.presentation.model.ProfileViewState.*
 import com.google.android.material.snackbar.Snackbar
