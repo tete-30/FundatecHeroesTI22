@@ -71,7 +71,7 @@ class LoginRepository {
             name = name,
             email = email,
             password = password,
-            date = Date()
+            date = Date ()
         )
     }
 
@@ -102,11 +102,5 @@ class LoginRepository {
         }
     }
 
-    suspend fun idUsuario(): Int {
-        return withContext(Dispatchers.IO) {
-            database.userDao().pegarId()
-        }
-    }
+
 }
-
-

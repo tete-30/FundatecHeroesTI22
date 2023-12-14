@@ -2,8 +2,13 @@ package br.com.fundatec.fundatecheroti22.createCharacter.data.repository
 
 import br.com.fundatec.fundatecheroti22.createCharacter.data.CharacterRequest
 import br.com.fundatec.fundatecheroti22.createCharacter.data.remote.CharacterResponse
+<<<<<<< HEAD
 import okhttp3.ResponseBody
 import retrofit2.Response
+=======
+import okhttp3.Response
+import okhttp3.ResponseBody
+>>>>>>> origin/hortensia1010
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -20,5 +25,10 @@ interface CharacterService {
     suspend fun listCharacter(
         @Path("idUser") idUser: Int,
     ): Response<List<CharacterResponse>>
+<<<<<<< HEAD
 
 }
+=======
+}
+
+>>>>>>> origin/hortensia1010

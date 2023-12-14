@@ -11,6 +11,12 @@ data class CharacterRequest (
     val characterType: String,
     val age: Int,
     val birthday: String?
+<<<<<<< HEAD
 
 
 )
+=======
+)
+
+
+>>>>>>> origin/hortensia1010
