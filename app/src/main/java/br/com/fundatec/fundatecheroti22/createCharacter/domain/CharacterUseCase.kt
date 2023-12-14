@@ -5,10 +5,7 @@ import br.com.fundatec.fundatecheroti22.createCharacter.data.repository.Characte
 import java.time.LocalDateTime
 
 class CharacterUseCase {
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/hortensia1010
     private val repository by lazy {
         CharacterRepository()
     }

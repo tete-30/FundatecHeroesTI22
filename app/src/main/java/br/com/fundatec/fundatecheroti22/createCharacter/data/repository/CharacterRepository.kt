@@ -30,11 +30,7 @@ class CharacterRepository {
         return withContext(Dispatchers.IO) {
             try {
                 val response = repository.createCharacter(
-<<<<<<< HEAD
                     idUser = loginRepository.idUsuario(),
-=======
-                    idUser = loginRepository.pegarId(),
->>>>>>> origin/hortensia1010
                     characterRequest = CharacterRequest(
                         name = name,
                         description = description,
@@ -57,11 +53,7 @@ class CharacterRepository {
         return withContext(Dispatchers.IO) {
             try {
                 val response = repository.listCharacter(
-<<<<<<< HEAD
                     idUser = loginRepository.idUsuario()
-=======
-                    idUser = loginRepository.pegarId()
->>>>>>> origin/hortensia1010
                 )
                 response.body()?: listOf()
             } catch (ex: Exception) {
