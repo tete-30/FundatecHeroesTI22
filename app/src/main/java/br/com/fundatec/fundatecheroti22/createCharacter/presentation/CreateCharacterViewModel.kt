@@ -26,15 +26,15 @@ class CreateCharacterViewModel : ViewModel() {
         universeType: Int,
         characterType: Int,
         age: String,
-        birthday: String
+          birthday: String
     ) {
-        if (name.isNullOrBlank()) {
+        if (name.isBlank()) {
             viewState.value = CharacterViewState.ShowNameError
             return
-        } else if (description.isNullOrBlank()) {
+        } else if (description.isBlank()) {
             viewState.value = CharacterViewState.ShowDescriptionError
             return
-        } else if (image.isNullOrBlank()) {
+        } else if (image.isBlank()) {
             viewState.value = CharacterViewState.ShowImageError
             return
         } else if (universeType == 0) {
@@ -43,7 +43,7 @@ class CreateCharacterViewModel : ViewModel() {
         } else if (characterType == 0) {
             viewState.value = CharacterViewState.ShowCharacterTypeError
             return
-        } else if (age.isNullOrBlank()) {
+        } else if (age.toInt() == 0) {
             viewState.value = CharacterViewState.ShowAgeError
             return
         } else {
@@ -60,7 +60,7 @@ class CreateCharacterViewModel : ViewModel() {
                 if (isSuccess) {
                     viewState.value = CharacterViewState.ShowHomeScreen
                 } else {
-                    viewState.value = CharacterViewState.ShowGenericError
+                    viewState.value = CharacterViewState.ShowError
                 }
             }
         }

@@ -9,5 +9,6 @@ sealed class CharacterViewState {
     object ShowAgeError: CharacterViewState()
     object ShowHomeScreen: CharacterViewState()
     object ShowGenericError: CharacterViewState()
+    object ShowError: CharacterViewState()
 
 }

@@ -102,5 +102,11 @@ class LoginRepository {
         }
     }
 
+    suspend fun idUsuario(): Int {
+        return withContext(Dispatchers.IO) {
+            database.userDao().idUsuario()
+
+        }
+    }
 
 }

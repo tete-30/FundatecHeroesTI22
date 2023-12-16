@@ -40,13 +40,10 @@ class HomeActivity : AppCompatActivity() {
             )
 
         )
-        binding.btTest.setOnClickListener {
-            adapter.remove(2)
-        }
     }
 
     private fun configNewCharacter() {
-        binding.floatingButton.setOnClickListener {
+        binding.btNewCharacter.setOnClickListener {
             startActivity(Intent(this@HomeActivity, CreateCharacterActivity::class.java))
         }
     }
