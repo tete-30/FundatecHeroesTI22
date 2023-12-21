@@ -15,10 +15,14 @@
     <string name="imagemPersonagem">Insira o link (URL)da imagem do seu personagem</string>
     <string name="idade">Quantos anos o seu personagem tem?</string>
     <string name="anos">Idade</string>
-    <string name="dataNasc">Data de Nascimento</string>
+    <string name="dataNasc">Data de Nascimento: %1$s</string>
     <string name="app_criar_personagem">Criar Personagem</string>
     <string name="criar">Criar</string>
     <string name="remover">Remover</string>
+    <string name="name">Nome</string>
+    <string name="description">Descrição</string>
+    <string name="sucessoPersonagem_removido">Personagem Removido</string>
+
     <string-array name="universeType">
         <item>Selecione</item>
         <item>Marvel</item>

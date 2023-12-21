@@ -71,7 +71,7 @@ class LoginRepository {
             name = name,
             email = email,
             password = password,
-            date = Date ()
+            date = Date()
         )
     }
 

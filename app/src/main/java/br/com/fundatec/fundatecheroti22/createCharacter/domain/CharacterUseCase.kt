@@ -34,4 +34,8 @@ class CharacterUseCase {
         return repository.listCharacter();
     }
 
+    suspend fun removerCharacter(characterId: Int): Boolean {
+        return repository.removerCharacter(characterId);
+    }
+
 }
